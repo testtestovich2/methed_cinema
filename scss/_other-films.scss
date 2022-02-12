@@ -1,0 +1,128 @@
+.other-films {
+   padding: 60px 0;
+
+   &__title {
+      max-width: 1330px;
+      margin: 0 auto;
+      font-family: $font-Raleway;
+      font-weight: 800;
+      font-size: 120px;
+      line-height: 130%;
+      text-transform: uppercase;
+      opacity: 0.1;
+      margin-bottom: 60px;
+   }
+
+   &__title-add {
+      display: block;
+      text-align: right;
+   }
+
+   &__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px 30px;
+      justify-content: space-between;
+      margin-bottom: 160px;
+   }
+
+   &__item {
+      width: calc(100% * 3 / 12 - 30px);
+      text-align: center;
+
+      &:nth-child(even) {
+         position: relative;
+         top: 50px;
+      }
+   }
+
+   &__img {
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px $color-primary;
+   }
+
+   &__btn {
+      background-color: $color-primary;
+      border-radius: 6px;
+      width: 375px;
+      height: 72px;
+      max-width: 100%;
+      color: $color-bg;
+      font-size: 18px;
+      font-weight: 700;
+      border: none;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0px 0px 10px transparent;
+      transition: all 0.3s;
+
+      &:hover {
+         box-shadow: 0px 0px 10px $color-primary;
+      }
+
+      &:focus {
+         box-shadow: 0px 0px 10px $color-primary;
+      }
+   }
+}
+
+@media (max-width: 1366px) {
+   .other-films {
+      &__title {
+         max-width: 1000px;
+         font-size: 90px;
+      }
+   }
+}
+
+@media (max-width: 1000px) {
+   .other-films {
+      &__title {
+         max-width: 80%;
+         font-size: 50px;
+      }
+
+      &__list {
+         margin-bottom: 90px;
+      }
+
+      &__item {
+         width: calc(100% * 6 / 12 - 15px);
+      }
+   }
+}
+
+@media (max-width: 768px) {
+   .other-films {
+      &__title {
+         max-width: none;
+         font-size: 40px;
+         margin-bottom: 30px;
+      }
+
+      &__title-add {
+         display: inline;
+      }
+
+      &__item {
+         width: 100%;
+
+         &:nth-child(even) {
+            position: static;
+            top: auto;
+         }
+      }
+   }
+}
+
+@media (max-width: 480px) {
+   .other-films {
+      &__title {
+         font-size: 28px;
+      }
+
+      &__list {
+         margin-bottom: 60px;
+      }
+   }
+}
