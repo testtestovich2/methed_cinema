@@ -1,0 +1,108 @@
+.footer {
+   padding: 60px 0;
+
+   &__container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 60px 30px;
+   }
+
+   &__column {
+      width: calc(25% - 30px);
+   }
+}
+
+.contacts {
+   &__logo {
+      font-family: $font-Raleway;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 29px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+   }
+
+   &__logo-primary {
+      color: $color-primary;
+   }
+
+   &__description {
+      font-size: 18px;
+      line-height: 140%;
+      opacity: 0.6;
+      margin-bottom: 26px;
+   }
+
+   &__phone {
+      display: block;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 140%;
+      margin-bottom: 10px;
+   }
+
+   &__mail {
+      display: block;
+      opacity: 0.6;
+      font-size: 18px;
+      line-height: 140%;
+      margin-bottom: 5px;
+   }
+   & :last-child {
+      margin-bottom: 0;
+   }
+}
+
+.subnav {
+   &__item:not(:last-child) {
+      margin-bottom: 10px;
+   }
+
+   &__link {
+      font-size: 18px;
+      line-height: 140%;
+   }
+}
+
+.regulation {
+   &__age {
+      height: 45px;
+      margin-bottom: 20px;
+   }
+
+   &__offer {
+      opacity: 0.6;
+      font-size: 16px;
+      line-height: 140%;
+   }
+}
+
+.partners {
+   &__me {
+      height: 45px;
+      margin-bottom: 20px;
+   }
+
+   &__description {
+      opacity: 0.6;
+      font-size: 16px;
+      line-height: 140%;
+   }
+}
+
+@media (max-width: 1000px) {
+   .footer {
+      &__column {
+         width: calc(50% - 30px);
+      }
+   }
+}
+
+@media (max-width: 480px) {
+   .footer {
+      &__column {
+         width: 100%;
+      }
+   }
+}
