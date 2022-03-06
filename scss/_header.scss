@@ -78,6 +78,11 @@
 
 @media (max-width: 768px) {
    .header {
+      &__burger-btn {
+         padding: 0;
+         width: auto;
+      }
+
       &__container {
          flex-wrap: wrap;
       }

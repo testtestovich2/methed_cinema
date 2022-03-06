@@ -4,27 +4,74 @@
    &__container {
       display: flex;
       flex-wrap: wrap;
+      justify-content: space-between;
       gap: 30px;
+      position: relative;
+
+      &:after {
+         content: attr(data-rating);
+         position: absolute;
+         top: 15px;
+         right: 45px;
+         background-color: rgb(0, 35, 66);
+         display: block;
+         width: 40px;
+         height: 40px;
+         border-radius: 50%;
+         text-align: center;
+         line-height: 40px;
+         font-weight: 800;
+      }
+   }
+
+   &__poster-wrapper {
+      position: relative;
+      line-height: 0;
+      border-radius: 10px;
+      overflow: hidden;
+
+      &:after {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         background-color: rgba(0, 0, 0, 0.4);
+         z-index: 0;
+      }
    }
 
    &__poster {
-      border-radius: 10px;
       width: 100%;
-      margin-bottom: 25px;
    }
 
    &__title {
       font-family: $font-Raleway;
       font-size: 60px;
       font-weight: 700;
-      line-height: 70px;
+      line-height: 1.2;
       letter-spacing: 0.05em;
       margin-right: 36px;
    }
 
+   &__title_origin {
+      position: absolute;
+      color: #ccc;
+      bottom: 3%;
+      left: 2%;
+      font-family: Raleway, sans-serif;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 1.2;
+      letter-spacing: 0.05em;
+      margin-right: 36px;
+      z-index: 1;
+   }
+
    &__tagline {
       font-size: 18px;
-      line-height: 140%;
+      line-height: 1.4;
       opacity: 0.6;
       margin-right: auto;
       padding-top: 10px;
@@ -34,7 +81,7 @@
       width: 375px;
       height: 72px;
       font-size: 18px;
-      line-height: 22px;
+      line-height: 1.4;
       border-radius: 6px;
       background-color: $color-second;
       color: $color-text;
@@ -59,15 +106,14 @@
       background-repeat: no-repeat;
       background-position: center;
       border-radius: 6px;
-      box-shadow: 0px 0px 10px transparent;
-      transition: all 0.3s;
+      transition: opacity 0.3s;
 
       &:hover {
-         box-shadow: 0px 0px 10px $color-primary;
+         opacity: 0.7;
       }
 
       &:focus {
-         box-shadow: 0px 0px 10px $color-primary;
+         opacity: 0.7;
       }
    }
 }
@@ -75,6 +121,7 @@
 @media (max-width: 1280px) {
    .film-week {
       &__title {
+         font-size: 40px;
          margin-right: auto;
       }
 
@@ -88,6 +135,10 @@
 
 @media (max-width: 1000px) {
    .film-week {
+      &__title {
+         font-size: 35px;
+      }
+
       &__watch-trailer {
          order: 1;
       }
@@ -96,7 +147,16 @@
 
 @media (max-width: 768px) {
    .film-week {
+      padding: 30px 0;
       padding-top: 30px;
+
+      &__title {
+         font-size: 25px;
+      }
+
+      &__title_origin {
+         font-size: 20px;
+      }
 
       &__container {
          gap: 15px;
@@ -111,12 +171,20 @@
 
 @media (max-width: 468px) {
    .film-week {
+      &__container:after {
+         right: 30px;
+      }
+
       &__poster {
          margin-bottom: 0;
       }
 
       &__title {
-         font-size: 48px;
+         font-size: 24px;
+      }
+
+      &__title_origin {
+         font-size: 15px;
       }
 
       &__tagline {

@@ -31,6 +31,7 @@ button {
 a {
    text-decoration: none;
    color: inherit;
+   transition: color 0.2s;
 }
 
 ul,
@@ -75,7 +76,17 @@ iframe {
    padding: 0 30px;
 }
 
-@media (max-width: 468px) {
+@media (max-width: 768px) {
+   body {
+      padding-top: 30px;
+   }
+}
+
+@media (max-width: 480px) {
+   body {
+      padding-top: 15px;
+   }
+
    .container {
       padding: 0 15px;
    }
