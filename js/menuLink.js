@@ -18,27 +18,27 @@ const menuLink = () => {
 
             if (target.classList.contains('get-nav__link_triends')) {
                getTriends('all')
-                  .then(data => renderCard(data.results));
+                  .then(data => renderCard(data.results, 'all'));
             }
 
             if (target.classList.contains('get-nav__link_popular-movies')) {
                getPopular('movie')
-                  .then(data => renderCard(data.results));
+                  .then(data => renderCard(data.results, 'movie'));
             }
 
             if (target.classList.contains('get-nav__link_popular-tv')) {
                getPopular('tv')
-                  .then(data => renderCard(data.results));
+                  .then(data => renderCard(data.results, 'tv'));
             }
 
             if (target.classList.contains('get-nav__link_top-movies')) {
                getTop('movie')
-                  .then(data => renderCard(data.results));
+                  .then(data => renderCard(data.results, 'movie'));
             }
 
             if (target.classList.contains('get-nav__link_top-tv')) {
                getTop('tv')
-                  .then(data => renderCard(data.results));
+                  .then(data => renderCard(data.results, 'tv'));
             }
          }
       });
